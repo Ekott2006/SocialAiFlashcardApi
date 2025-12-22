@@ -1,0 +1,12 @@
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.csproj.AssemblyReference.cache
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.AssemblyInfoInputs.cache
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.AssemblyInfo.cs
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\bin\Debug\net10.0\Core.deps.json
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\bin\Debug\net10.0\Core.dll
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\bin\Debug\net10.0\Core.pdb
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.dll
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\refint\Core.dll
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\Core.pdb
+C:\Users\Nsikak\RiderProjects\SocialAiFlashcardApi\Core\obj\Debug\net10.0\ref\Core.dll
