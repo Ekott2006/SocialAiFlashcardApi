@@ -1,10 +1,12 @@
 ﻿using Core.Model.Helper;
+using Core.Model.Helper.Deck;
+using Core.Model.Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace Core.Model;
 
 [Index(nameof(Name), nameof(CreatorId), IsUnique = true)]
-public class Deck: DateTimeModel, ISoftDeletable
+public class Deck:  HelperModelEntity, IPagination<int>
 {
     public int Id { get; set; }
     public string CreatorId {get; set;}

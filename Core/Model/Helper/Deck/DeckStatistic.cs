@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace Core.Model;
+namespace Core.Model.Helper.Deck;
 
 [Owned]
 public class DeckStatistic

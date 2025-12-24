@@ -1,10 +1,9 @@
-﻿using Core.Model.Helper;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Core.Model;
+namespace Core.Model.Helper.Deck;
 
 [Owned]
-public class DeckOption
+public record DeckOption
 {
     public int NewCardsPerDay { get; set; }
     public int ReviewLimitPerDay { get; set; }

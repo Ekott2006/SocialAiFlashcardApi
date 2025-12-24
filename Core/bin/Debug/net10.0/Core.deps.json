@@ -8,14 +8,26 @@
     ".NETCoreApp,Version=v10.0": {
       "Core/1.0.0": {
         "dependencies": {
+          "AngleSharp": "1.4.0",
           "Bogus": "35.6.5",
+          "ByteAether.Ulid": "1.3.4",
+          "ExCSS": "4.3.1",
           "MR.EntityFrameworkCore.KeysetPagination": "1.5.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "10.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.1",
-          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.1"
+          "Microsoft.EntityFrameworkCore.Sqlite": "10.0.1",
+          "Scriban": "6.5.2"
         },
         "runtime": {
           "Core.dll": {}
+        }
+      },
+      "AngleSharp/1.4.0": {
+        "runtime": {
+          "lib/net10.0/AngleSharp.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
         }
       },
       "Bogus/35.6.5": {
@@ -23,6 +35,22 @@
           "lib/net6.0/Bogus.dll": {
             "assemblyVersion": "35.6.5.0",
             "fileVersion": "35.6.5.0"
+          }
+        }
+      },
+      "ByteAether.Ulid/1.3.4": {
+        "runtime": {
+          "lib/net10.0/ByteAether.Ulid.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ExCSS/4.3.1": {
+        "runtime": {
+          "lib/net8.0/ExCSS.dll": {
+            "assemblyVersion": "4.3.1.0",
+            "fileVersion": "4.3.1.0"
           }
         }
       },
@@ -191,6 +219,14 @@
           "lib/net8.0/MR.EntityFrameworkCore.KeysetPagination.dll": {
             "assemblyVersion": "1.5.0.0",
             "fileVersion": "1.5.0.0"
+          }
+        }
+      },
+      "Scriban/6.5.2": {
+        "runtime": {
+          "lib/net7.0/Scriban.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.5.2.0"
           }
         }
       },
@@ -364,12 +400,33 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AngleSharp/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6ph8mpaQx0KL0COYRt0kI8MB9gSp1PtKijKMhJU//+aVFgKAJLKDesG/+26JSaVCOrHNgPf12wpfoyRcMYOeXg==",
+      "path": "anglesharp/1.4.0",
+      "hashPath": "anglesharp.1.4.0.nupkg.sha512"
+    },
     "Bogus/35.6.5": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-2FGZn+aAVHjmCgClgmGkTDBVZk0zkLvAKGaxEf5JL6b3i9JbHTE4wnuY4vHCuzlCmJdU6VZjgDfHwmYkQF8VAA==",
       "path": "bogus/35.6.5",
       "hashPath": "bogus.35.6.5.nupkg.sha512"
+    },
+    "ByteAether.Ulid/1.3.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mb+UQN1VVYmsApgxHD/9I5pcCJrgemzXMs9YvZybLjwzVF41ZX8Z6oNaF8C+sgs+CV7W0Sv+ZBXBBsvsMrrW0g==",
+      "path": "byteaether.ulid/1.3.4",
+      "hashPath": "byteaether.ulid.1.3.4.nupkg.sha512"
+    },
+    "ExCSS/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A8UtcghHQlWxPJhJF5bsfEYO7068JHGTuJ7tzyyMjd5fE/N/xY1cVOUhzuLLFwMOCJVnM4mqSQc93W9fGfZ1kA==",
+      "path": "excss/4.3.1",
+      "hashPath": "excss.4.3.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/10.0.1": {
       "type": "package",
@@ -482,6 +539,13 @@
       "sha512": "sha512-1aowIb/g4tWuZuBbvCjVY0mL6dbfOG58fjefXfOSmgBo5+TyPbSBilJjy+bAVDckbUBRq8NxCS9lO2bY1BPvTg==",
       "path": "mr.entityframeworkcore.keysetpagination/1.5.0",
       "hashPath": "mr.entityframeworkcore.keysetpagination.1.5.0.nupkg.sha512"
+    },
+    "Scriban/6.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JXli/Sh1WVZs/pqnPPRJTlwEsZHPJtndzxiaPnrteXDpAqVqHxh4ifhx4puTaYKVMPJUMOp9bnCpEVBpYlt/eQ==",
+      "path": "scriban/6.5.2",
+      "hashPath": "scriban.6.5.2.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.11": {
       "type": "package",

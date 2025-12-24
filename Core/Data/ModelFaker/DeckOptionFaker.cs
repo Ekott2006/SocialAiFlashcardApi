@@ -1,6 +1,6 @@
 ﻿using Bogus;
 using Core.Model;
-using Core.Model.Helper;
+using Core.Model.Helper.Deck;
 
 namespace Core.Data.ModelFaker;
 

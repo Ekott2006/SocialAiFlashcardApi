@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Test\\Test.csproj": {}
+    "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Test\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj": {
+    "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Nsikak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\obj\\",
+        "outputPath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nsikak\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -44,9 +44,21 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "AngleSharp": {
+              "target": "Package",
+              "version": "[1.4.0, )"
+            },
             "Bogus": {
               "target": "Package",
               "version": "[35.6.5, )"
+            },
+            "ByteAether.Ulid": {
+              "target": "Package",
+              "version": "[1.3.4, )"
+            },
+            "ExCSS": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             },
             "MR.EntityFrameworkCore.KeysetPagination": {
               "target": "Package",
@@ -63,6 +75,10 @@
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[10.0.1, )"
+            },
+            "Scriban": {
+              "target": "Package",
+              "version": "[6.5.2, )"
             }
           },
           "imports": [
@@ -359,14 +375,14 @@
         }
       }
     },
-    "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Test\\Test.csproj": {
+    "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Test\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Test\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Test\\Test.csproj",
+        "projectPath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Test\\Test.csproj",
         "packagesPath": "C:\\Users\\Nsikak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Test\\obj\\",
+        "outputPath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Nsikak\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -381,8 +397,8 @@
           "net10.0": {
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj"
+              "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj"
               }
             }
           }

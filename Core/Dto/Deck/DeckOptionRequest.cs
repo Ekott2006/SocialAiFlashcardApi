@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Core.Model;
-using Core.Model.Helper;
+using Core.Model.Helper.Deck;
 
 namespace Core.Dto.Deck;
 

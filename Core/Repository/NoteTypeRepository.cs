@@ -1,45 +1,25 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Core.Data;
+﻿using Core.Data;
+using Core.Data.Helper;
 using Core.Dto.Common;
+using Core.Dto.NoteType;
 using Core.Model;
+using Core.Services;
 using Microsoft.EntityFrameworkCore;
 using MR.EntityFrameworkCore.KeysetPagination;
 
 namespace Core.Repository;
 
-public class NoteTypeRepository(DataContext context)
+public class NoteTypeRepository(DataContext context) : Repository
 {
     // TODO: Constrict the Response Type from the Select
-    public async Task<PaginationResult<NoteType>> Get(string creatorId, PaginationRequest request,
+    public async Task<PaginationResult<NoteType>> Get(string creatorId, PaginationRequest<int> request,
         bool isDeleted)
     {
-        IQueryable<NoteType> query = isDeleted
-                ? context.NoteTypes.AsNoTracking().IgnoreQueryFilters()
-                    .Where(x => x.IsDeleted && x.CreatorId == creatorId)
-                : context.NoteTypes.AsNoTracking()
-                    .Where(x => x.CreatorId == creatorId || x.CreatorId == null)
-            ;
+        IQueryable<NoteType> query = context.NoteTypes.AsNoTracking()
+            .Where(x => x.CreatorId == creatorId || x.CreatorId == null);
+        if (isDeleted) query = query.IgnoreQueryFilters().Where(x => x.IsDeleted);
 
-        NoteType? reference = request.CursorId != null
-            ? await query.FirstOrDefaultAsync(x => x.Id == request.CursorId)
-            : null;
-
-        KeysetPaginationContext<NoteType> keysetContext = query
-            .KeysetPaginate(x =>
-                    x.Descending(d => d.UpdatedDate).Descending(d => d.Id),
-                KeysetPaginationDirection.Forward,
-                reference
-            );
-
-        List<NoteType> decks = await keysetContext.Query
-            .Take(request.PageSize)
-            .ToListAsync();
-        keysetContext.EnsureCorrectOrder(decks);
-        bool hasPrevious = await keysetContext.HasPreviousAsync(decks);
-        bool hasNext = await keysetContext.HasNextAsync(decks);
-        int count = await query.CountAsync();
-
-        return new PaginationResult<NoteType>(decks, count, decks.Count, hasPrevious, hasNext);
+        return await PaginateAsync(query, request);
     }
 
     public async Task<NoteType?> Get(string creatorId, int id)
@@ -51,6 +31,7 @@ public class NoteTypeRepository(DataContext context)
 
     private async Task<bool> DoesNoteNameExist(string name) =>
         await context.NoteTypes.AnyAsync(x => x.Name == name && x.CreatorId == null);
+
     public async Task<NoteType?> Create(string creatorId, NoteTypeRequest request)
     {
         if (await DoesNoteNameExist(request.Name)) return null;
@@ -59,7 +40,6 @@ public class NoteTypeRepository(DataContext context)
         {
             CreatorId = creatorId,
             Name = request.Name,
-            Fields = request.Fields,
             Templates = request.Templates,
             CssStyle = request.CssStyle,
         };
@@ -69,46 +49,28 @@ public class NoteTypeRepository(DataContext context)
     }
 
 
-    public async Task<int?> Update(int id, string creatorId, NoteTypeRequest request)
+    public async Task<int> Update(int id, string creatorId, NoteTypeRequest request)
     {
-        if (await DoesNoteNameExist(request.Name)) return null;
+        if (await DoesNoteNameExist(request.Name)) return 0;
         return await context.NoteTypes.Where(x => x.Id == id && x.CreatorId == creatorId)
             .ExecuteUpdateAsync(x => x
-                .SetProperty(d => d.Name, request.Name)
-                .SetProperty(d => d.Fields, request.Fields)
-                .SetProperty(d => d.Templates, request.Templates)
-                .SetProperty(d => d.CssStyle, request.CssStyle)
+                .SetProperty(b => b.Name, request.Name)
+                .SetProperty(b => b.Templates, request.Templates)
+                .SetProperty(b => b.CssStyle, request.CssStyle)
             );
     }
 
     public async Task<int> Delete(int id, string creatorId)
     {
-        return await context.NoteTypes.Where(x => x.CreatorId == creatorId && x.Id == id).ExecuteDeleteAsync();
+        return await context.NoteTypes
+            .Where(x => x.CreatorId == creatorId && x.Id == id)
+            .SetSoftDeleteAsync(true);
     }
-
 
     public async Task<int> Restore(int id, string creatorId)
     {
-        return await context.NoteTypes.IgnoreQueryFilters().Where(x => x.Id == id && x.CreatorId == creatorId)
-            .ExecuteUpdateAsync(x => x
-                .SetProperty(d => d.IsDeleted, false)
-            );
+        return await context.NoteTypes
+            .Where(x => x.Id == id && x.CreatorId == creatorId)
+            .SetSoftDeleteAsync(false);
     }
-}
-
-public class NoteTypeRequest
-{
-    [Required]
-    [StringLength(100, MinimumLength = 3)]
-    public string Name { get; set; }
-
-    [StringLength(5000)] public string CssStyle { get; set; } = string.Empty;
-    [Required] [MinLength(1)] public string[] Fields { get; set; }
-    [Required] [MinLength(1)] public NoteTypeTemplates[] Templates { get; set; }
-}
-
-public class NoteTypeTemplatesRequest
-{
-    public string Front { get; set; } = string.Empty;
-    public string Back { get; set; } = string.Empty;
 }

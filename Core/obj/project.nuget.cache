@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "THh/y4uReOw=",
+  "dgSpecHash": "0QX0G3JkQE4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Core\\Core.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Nsikak\\.nuget\\packages\\anglesharp\\1.4.0\\anglesharp.1.4.0.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\bogus\\35.6.5\\bogus.35.6.5.nupkg.sha512",
+    "C:\\Users\\Nsikak\\.nuget\\packages\\byteaether.ulid\\1.3.4\\byteaether.ulid.1.3.4.nupkg.sha512",
+    "C:\\Users\\Nsikak\\.nuget\\packages\\excss\\4.3.1\\excss.4.3.1.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.1\\microsoft.aspnetcore.authentication.jwtbearer.10.0.1.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\10.0.1\\microsoft.aspnetcore.cryptography.internal.10.0.1.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\10.0.1\\microsoft.aspnetcore.cryptography.keyderivation.10.0.1.nupkg.sha512",
@@ -41,6 +44,7 @@
     "C:\\Users\\Nsikak\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.0.1\\microsoft.identitymodel.tokens.8.0.1.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\mr.entityframeworkcore.keysetpagination\\1.5.0\\mr.entityframeworkcore.keysetpagination.1.5.0.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\mr.entityframeworkcore.keysetpagination.analyzers\\1.5.0\\mr.entityframeworkcore.keysetpagination.analyzers.1.5.0.nupkg.sha512",
+    "C:\\Users\\Nsikak\\.nuget\\packages\\scriban\\6.5.2\\scriban.6.5.2.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.1.11\\sqlitepclraw.bundle_e_sqlite3.2.1.11.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\sqlitepclraw.core\\2.1.11\\sqlitepclraw.core.2.1.11.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.11\\sqlitepclraw.lib.e_sqlite3.2.1.11.nupkg.sha512",

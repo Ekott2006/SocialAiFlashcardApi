@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aRb8qZPzQno=",
+  "dgSpecHash": "miuUH8NG9y4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nsikak\\RiderProjects\\SocialAiFlashcardApi\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\Nsikak\\Documents\\VsCodeProjects\\Net\\SocialAiFlashcardApi\\Api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nsikak\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Nsikak\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

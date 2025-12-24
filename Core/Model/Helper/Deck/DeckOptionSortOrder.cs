@@ -1,4 +1,4 @@
-﻿namespace Core.Model.Helper;
+﻿namespace Core.Model.Helper.Deck;
 
 public enum DeckOptionSortOrder
 {

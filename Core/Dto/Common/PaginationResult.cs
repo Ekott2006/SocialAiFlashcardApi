@@ -2,7 +2,7 @@
 
 public record PaginationResult<T>(
     IReadOnlyList<T> Data,
-    int TotalCount,
+    // int TotalCount,
     int PageSize,
     bool HasPrevious,
     bool HasNext

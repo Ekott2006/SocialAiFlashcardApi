@@ -1,45 +1,24 @@
 ﻿using Core.Data;
+using Core.Data.Helper;
 using Core.Dto.Common;
 using Core.Dto.Deck;
 using Core.Model;
+using Core.Model.Helper.Deck;
 using Microsoft.EntityFrameworkCore;
 using MR.EntityFrameworkCore.KeysetPagination;
 
 namespace Core.Repository;
 
-public class DeckRepository(DataContext context)
+public class DeckRepository(DataContext context) : Repository
 {
     // TODO: Constrict the Type from the Select
-    public async Task<PaginationResult<Deck>> Get(string creatorId, PaginationRequest request,
+    public async Task<PaginationResult<Deck>> Get(string creatorId, PaginationRequest<int> request,
         bool isDeleted)
     {
-        IQueryable<Deck> query = isDeleted
-                ? context.Decks.AsNoTracking().IgnoreQueryFilters()
-                    .Where(x => x.IsDeleted && x.CreatorId == creatorId)
-                : context.Decks.AsNoTracking()
-                    .Where(x => x.CreatorId == creatorId)
-            ;
+        IQueryable<Deck> query = context.Decks.AsNoTracking().Where(x => x.CreatorId == creatorId);
+        if (isDeleted) query = query.IgnoreQueryFilters().Where(x => x.IsDeleted == isDeleted);
 
-        Deck? reference = request.CursorId != null
-            ? await query.FirstOrDefaultAsync(x => x.Id == request.CursorId)
-            : null;
-
-        KeysetPaginationContext<Deck> keysetContext = query
-            .KeysetPaginate(x =>
-                    x.Descending(d => d.UpdatedDate).Descending(d => d.Id),
-                KeysetPaginationDirection.Forward,
-                reference
-            );
-
-        List<Deck> decks = await keysetContext.Query
-            .Take(request.PageSize)
-            .ToListAsync();
-        keysetContext.EnsureCorrectOrder(decks);
-        bool hasPrevious = await keysetContext.HasPreviousAsync(decks);
-        bool hasNext = await keysetContext.HasNextAsync(decks);
-        int count = await query.CountAsync();
-
-        return new PaginationResult<Deck>(decks, count, decks.Count, hasPrevious, hasNext);
+        return await PaginateAsync(query, request);
     }
 
     public async Task<Deck?> Get(string creatorId, int id)
@@ -96,15 +75,16 @@ public class DeckRepository(DataContext context)
 
     public async Task<int> Delete(int id, string creatorId)
     {
-        return await context.Decks.Where(x => x.CreatorId == creatorId && x.Id == id).ExecuteDeleteAsync();
+        return await context.Decks
+            .Where(x => x.CreatorId == creatorId && x.Id == id)
+            .SetSoftDeleteAsync(true);
     }
 
 
     public async Task<int> Restore(int id, string creatorId)
     {
-        return await context.Decks.IgnoreQueryFilters().Where(x => x.Id == id && x.CreatorId == creatorId)
-            .ExecuteUpdateAsync(x => x
-                .SetProperty(d => d.IsDeleted, false)
-            );
+        return await context.Decks
+            .Where(x => x.CreatorId == creatorId && x.Id == id)
+            .SetSoftDeleteAsync(false);
     }
 }
